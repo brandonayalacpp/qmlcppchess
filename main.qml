@@ -8,32 +8,8 @@ ApplicationWindow {
     visible: true
     title: qsTr("Hello World")
 
-//    Connections
-//    {
-//        target: MessageClass
-//        onMessageChange: textId.text = value;
-//    }
 
-    Column
-    {
-        Text
-        {
-            id: textId
-            text: MessageClass.message
-        }
-        Button
-        {
-            text: "Change text"
-            onClicked: MessageClass.doMessageChange()
-        }
-        Button
-        {
-            text: "New Button"
-            onClicked:{
-                var result = MessageClass.sendMessageFromCpp("This is QML")
-                print("result:" + result)
-            }
-        }
-    }
+    ChessBoardView{}
+
 
 }
