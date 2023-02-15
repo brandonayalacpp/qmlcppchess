@@ -1,14 +1,18 @@
 import QtQuick 2.0
 
-
-Row
+Item
 {
-    Rectangle { color: "green"; width: 50; height: 50 }
-    Rectangle { color: "white"; width: 50; height: 50 }
-    Rectangle { color: "green"; width: 50; height: 50 }
-    Rectangle { color: "white"; width: 50; height: 50 }
-    Rectangle { color: "green"; width: 50; height: 50 }
-    Rectangle { color: "white"; width: 50; height: 50 }
-    Rectangle { color: "green"; width: 50; height: 50 }
-    Rectangle { color: "white"; width: 50; height: 50 }
+    width: 400; height: 50
+
+    Row
+    {
+        Rectangle { color: "green"; width: 50; height: 50 }
+        Rectangle { color: "white"; width: 50; height: 50 }
+        Rectangle { color: "green"; width: 50; height: 50 }
+        Rectangle { color: "white"; width: 50; height: 50 }
+        Rectangle { color: "green"; width: 50; height: 50 }
+        Rectangle { color: "white"; width: 50; height: 50 }
+        Rectangle { color: "green"; width: 50; height: 50 }
+        Rectangle { color: "white"; width: 50; height: 50 }
+    }
 }

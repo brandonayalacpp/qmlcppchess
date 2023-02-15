@@ -8,8 +8,10 @@ ApplicationWindow {
     visible: true
     title: qsTr("Hello World")
 
-
-    ChessBoardView{}
+    Item
+    {
+        ChessBoardView{}
+    }
 
 
 }
