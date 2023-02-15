@@ -3,7 +3,7 @@
 #include <QQmlContext>
 #include <QDebug>
 
-#include <message.h>
+#include "Startup.h"
 
 
 void testInvoke(QObject* rootObject)
@@ -22,13 +22,15 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
-    Message message;
-    auto root_context = engine.rootContext();
-    root_context->setContextProperty("MessageClass", &message);
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    Startup startup;
 
-    auto root_object = engine.rootObjects().first();
-    testInvoke(root_object);
+//    QQmlApplicationEngine engine;
+//    Message message;
+//    auto root_context = engine.rootContext();
+//    root_context->setContextProperty("MessageClass", &message);
+//    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+
+//    auto root_object = engine.rootObjects().first();
+//    testInvoke(root_object);
     return app.exec();
 }
