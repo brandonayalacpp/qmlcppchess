@@ -5,4 +5,8 @@
         <file>EvenRow.qml</file>
         <file>ChessBoardView.qml</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>images/blackpawn.png</file>
+        <file>images/whitepawn.png</file>
+    </qresource>
 </RCC>

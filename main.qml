@@ -6,12 +6,21 @@ ApplicationWindow {
     width: 640
     height: 480
     visible: true
-    title: qsTr(MainViewManager.appName)
+    title: qsTr(MainViewManager.appNameVersion)
 
-    Item
+    Rectangle
     {
-        ChessBoardView{}
+        objectName: "mainViewRect"
+        id: mainViewRect
+
+        //Board
+        Item
+        {
+            ChessBoardView{}
+        }
     }
+
+
 
 
 }

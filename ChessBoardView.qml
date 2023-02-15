@@ -4,6 +4,9 @@ import QtQuick.Controls 1.2
 Item {
     width: 450; height: 450
 
+    property url whitePawnSource : "images/images/whitepawn.png"
+    property url blackPawnSource : "images/images/blackpown.png"
+
     ListModel
     {
         id: listModelId
@@ -86,6 +89,15 @@ Item {
                 EvenRow{}
 
             }
+        }
+
+
+
+        Image
+        {
+            id : whitePawn
+            width: 50; height: 50
+            source : whitePawnSource
         }
     }
 }
