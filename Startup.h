@@ -4,8 +4,14 @@
 #include <QObject>
 
 
+
 class QQmlApplicationEngine;
 class MainViewManager;
+
+namespace Model
+{
+    class BoardModel;
+}
 
 
 class Startup : public QObject
@@ -18,6 +24,7 @@ signals:
 private:
     QQmlApplicationEngine *mEngine;
     MainViewManager *mMainViewManager;
+    Model::BoardModel *mBoardModel;
 
 };
 
