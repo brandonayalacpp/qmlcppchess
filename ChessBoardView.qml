@@ -1,11 +1,9 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
+import QtQuick.Layouts 1.15
 
 Item {
     width: 450; height: 450
-
-    property url whitePawnSource : "images/images/whitepawn.png"
-    property url blackPawnSource : "images/images/blackpown.png"
 
     ListModel
     {
@@ -32,6 +30,7 @@ Item {
         ListElement { name:"G"}
         ListElement { name:"H"}
     }
+
 
     Column
     {
@@ -77,27 +76,59 @@ Item {
                         verticalAlignment:Text.AlignVCenter
                     }
             }
-            Column
+
+            GridLayout
             {
-                OddRow{}
-                EvenRow{}
-                OddRow{}
-                EvenRow{}
-                OddRow{}
-                EvenRow{}
-                OddRow{}
-                EvenRow{}
+                id:someLayout
+                width: 400; height: 400
+                columns: 8
+                rows: 8
 
+                function isNumberEven(number)
+                {
+                    return number % 2 == 0 ? true:false;
+                }
+
+                function createSpriteObjects() {
+                    var component = Qt.createComponent("CellBoard.qml");
+                    if (component.status == Component.Ready)
+                    {
+                        for(let i = 0; i < 8; ++i)
+                        {
+                            for(let j = 0; j < 8; ++j)
+                            {
+                                var button = component.createObject(someLayout);
+
+                                if(!isNumberEven(i + 1))
+                                {
+                                    if(isNumberEven(j + 1))
+                                    {
+                                        button.color = "green";
+                                    }
+                                    else
+                                    {
+                                        button.color = "gray";
+                                    }
+
+                                }
+                                else
+                                {
+                                    if(!isNumberEven(j + 1))
+                                    {
+                                        button.color = "green";
+                                    }
+                                    else
+                                    {
+                                        button.color = "gray";
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+                Component.onCompleted: createSpriteObjects()
             }
-        }
-
-
-
-        Image
-        {
-            id : whitePawn
-            width: 50; height: 50
-            source : whitePawnSource
         }
     }
 }

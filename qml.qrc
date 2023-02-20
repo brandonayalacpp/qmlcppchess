@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>OddRow.qml</file>
-        <file>EvenRow.qml</file>
+        <file>CellBoard.qml</file>
         <file>ChessBoardView.qml</file>
+        <file>PieceView.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/blackpawn.png</file>

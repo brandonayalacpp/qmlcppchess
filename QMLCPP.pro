@@ -11,6 +11,7 @@ DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 SOURCES += \
         Model/BoardModel.cpp \
+        Model/PieceModel.cpp \
         Startup.cpp \
         ViewManager/MainViewManager.cpp \
         main.cpp \
@@ -31,6 +32,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Model/BoardModel.h \
+    Model/PieceModel.h \
     Startup.h \
     ViewManager/MainViewManager.h \
     common/Common.h \
